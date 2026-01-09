@@ -80,10 +80,26 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  #services.xserver.windowManager."2bwm".enable = true;
+  #services.xserver.windowManager.sxwm.enable = true;
+
   # Enable my custom dwm and source
-  # services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-    # src = 
-  # };
+  /*services.xserver.windowManager.dwm.enable = true;
+
+  services.xserver.windowManager.dwm.package =
+    let
+      my-dwm = pkgs.fetchFromGitHub {
+        owner = "Xano-verse";
+        repo = "dotfiles";
+        rev = "c8a1a88d91354f2a7daa2c17f0f9e68f97dc7e2c";
+	sha256 = "sha256-shcWBoTpH0oaCO9B8BLM/0/yUTbE0QBElzyudW+CkVM=";
+      };
+    in
+      pkgs.dwm.overrideAttrs {
+	src = "${my-dwm}/dwm/dwm/dwm-itself"; 
+	# dontUnpack = true;
+      };
+*/
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -101,8 +117,14 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable support for Bluetooth
+  hardware.bluetooth.enable = true;
+  # Powers up the default Bluetooth controller on boot
+  hardware.bluetooth.powerOnBoot = true;
+
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  #hardware.pulseaudio.enable = false;	# Old option, deprecated
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
