@@ -1,14 +1,16 @@
 # NixOS-configs
 
-system - system-wide configuration and packages
-home - home-manager for user-wide configuration
+#### system - system-wide configuration and packages
+#### home - home-manager for user-wide configuration
 
 
-scripts-auxiliares
+### scripts-auxiliares
 all files return derivations so they can be called using callPackage anywhere in the config
+
 in the default.nix of this directory, all derivations from the scripts are added home.packages so they're also installed user-wide in the PATH
 
 realise-symlinks.nix -> has a script that turns a symlink to an actual file. This is useful because the files that home-manager generates are only symbolic links to the nix store and thus can't be changed, they're readonly, but it's often useful to do small changes to dotfiles for testing before rebuilding the whole system. 
+
 For example,
 ```
 realize-symlinks .zshrc
@@ -21,6 +23,7 @@ replace-hash-nixos.nix -> has a script to update the hash of a fetchurl. First, 
 replace-hash-nixos <marker> <path to .nix file>
 ```
 The marker will be the name of the fetchurl variable in the file. Also, in the hash line there is the specific text "# marker for replace hash script: marker"
+
 An example:
 ```
 zshrcSource = pkgs.fetchurl { url = "https://raw.githubusercontent.com/Xano-verse/dotfiles/refs/heads/main/zsh/zshrc-nixos.txt";
