@@ -31,7 +31,6 @@ An example:
 ```
 zshrcSource = pkgs.fetchurl { url = "https://raw.githubusercontent.com/Xano-verse/dotfiles/refs/heads/main/zsh/zshrc-nixos.txt";
 
-                #sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
                 sha256 = "sha256-2G2sVUw1yrbyc4t59Eiu7Mfk6LVX701JsKeviBu7HQ0="; # marker for replace hash script: zshrcSource
         };
 ```
