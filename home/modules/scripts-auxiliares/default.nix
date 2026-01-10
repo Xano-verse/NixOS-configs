@@ -4,6 +4,7 @@ let
 	# callPackage chama o ficheiro .nix que está a retornar uma derivation
 	# depois, incluímos a derivation no home.packages para instalar o script user-wide como programa no PATH
 	realiseSymlink = pkgs.callPackage ./realise-symlink.nix {};
+	replaceHash = pkgs.callPackage ./replace-hash-nixos.nix {};
 
 in
 {
@@ -21,6 +22,7 @@ in
 	home.packages = [
 		
 		realiseSymlink
+		replaceHash
 	
 	];
 
