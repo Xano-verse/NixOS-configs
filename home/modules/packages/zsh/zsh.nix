@@ -42,7 +42,7 @@ in
 		oh-my-zsh = {
     			enable = true;
     			plugins = [ "git" ];
-			custom = "/home/nixano/.oh-my-zsh/custom/";
+			custom = "/home/xanix/.oh-my-zsh/custom/";
 			# Vai procurar na pasta themes pelo specified theme
 			theme = "classyTouch";
   		};

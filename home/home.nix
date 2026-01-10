@@ -10,8 +10,8 @@
 		./modules/packages/default.nix
 	];
 
-	home.username = "nixano";
-	home.homeDirectory = "/home/nixano";
+	home.username = "xanix";
+	home.homeDirectory = "/home/xanix";
 	home.stateVersion = "25.11";
 
 	# Let Home Manager install and manage itself.

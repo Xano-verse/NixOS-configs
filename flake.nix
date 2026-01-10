@@ -4,7 +4,7 @@
 	inputs = {
 		# inputs cant use logic por isso nao da fazer let e in e por uma variavel para o channel
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-		# nixpkgs.url = "path:/home/nixano/nixpkgs";
+		# nixpkgs.url = "path:/home/xanix/nixpkgs";
 		
 		home-manager.url = "github:nix-community/home-manager/release-25.11";
 
@@ -30,7 +30,7 @@
     					home-manager.nixosModules.home-manager {
       						home-manager.useGlobalPkgs = true;
       						home-manager.useUserPackages = true;
-      						home-manager.users.nixano = import ./home/home.nix;
+      						home-manager.users.xanix = import ./home/home.nix;
     					}
 
 					# Enable Niri Window Manager
@@ -45,7 +45,7 @@
 				];
 			};
 
-			homeConfigurations.nixano = home-manager.lib.homeManagerConfiguration {
+			homeConfigurations.xanix = home-manager.lib.homeManagerConfiguration {
 				pkgs = nixpkgs.legacyPackages.${system};
 				modules = [
 					./home/home.nix
