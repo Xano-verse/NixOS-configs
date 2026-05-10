@@ -42,12 +42,12 @@ replace-hash-nixos zshrcSource /etc/nixos/home/modules/packages/zsh/zsh.nix
 
 
 ### So basically: you want to edit .zshrc? (for example)
-1. do $ realise-symlinks .zshrc
+1. do `$ realise-symlinks .zshrc`
 2. edit it how you want and you can test if it's working like you want it to
 3. when it's ready, put it into the remote dotfiles repo
-4. remove the .zshrc in the original location and then rebuild the system
+4. remove the `.zshrc` in the original location and then rebuild the system
 
-4.5. to rebuild the system you will need to update the hash in the zsh.nix file since the remote file was changed. For that just do $ replace-hash-nixos zshrcSource zsh.nix in the /etc/nixos/home/modules/packages direcotry
+-> To rebuild the system you will need to update the hash in the zsh.nix file since the remote file was changed. For that just do `$ replace-hash-nixos zshrcSource zsh.nix` in the `/etc/nixos/home/modules/packages` direcotry
 This is only if you actually changed the remote file, after testing you can just not care about what you tested. In that case just remove the .zshrc and rebuild the system
 
 
