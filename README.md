@@ -49,7 +49,7 @@ replace-hash-nixos zshrcSource /etc/nixos/home/modules/packages/zsh/zsh.nix
 
 `-->` To rebuild the system you will need to update the hash in the `zsh.nix` file since the remote file was changed. For that just do `$ replace-hash-nixos zshrcSource zsh.nix` in the `/etc/nixos/home/modules/packages` directory (see the replace-hash-nixos command specification above for more details)
 
-This is only if you actually changed the remote file, after testing you can just not care about what you tested. In that case just remove the .zshrc and rebuild the system
+This is only if you actually changed the remote file, after testing you can just not care about what you tested. In that case just remove the `.zshrc` and rebuild the system
 
 
 
