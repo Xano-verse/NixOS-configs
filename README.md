@@ -41,3 +41,32 @@ replace-hash-nixos zshrcSource /etc/nixos/home/modules/packages/zsh/zsh.nix
 (we can also use a relative path obviously)
 
 
+### So basically: you want to edit .zshrc? (for example)
+1. do $ realise-symlinks .zshrc
+2. edit it how you want and you can test if it's working like you want it to
+3. when it's ready, put it into the remote dotfiles repo
+4. remove the .zshrc in the original location and then rebuild the system
+
+4.5. to rebuild the system you will need to update the hash in the zsh.nix file since the remote file was changed. For that just do $ replace-hash-nixos zshrcSource zsh.nix in the /etc/nixos/home/modules/packages direcotry
+This is only if you actually changed the remote file, after testing you can just not care about what you tested. In that case just remove the .zshrc and rebuild the system
+
+
+
+---
+
+### Package configurations
+If nix has features to define our configs through the nix language in a way we like, we can do that
+
+But we can also use home-manager to pull a config file (from github for example) and specifically put it in place (like move it to ~/.config/ for example)
+
+vim config is done system-wide wht nix language while zsh config is done with with home manager, for example
+
+
+### Done in Nix System-Wide
+vim
+
+### Done with Home-Manager:
+git (even though installed system-wide)
+zsh
+
+
