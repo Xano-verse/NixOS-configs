@@ -9,11 +9,18 @@
     [ # Include the results of the hardware scan.
       ./modules/hardware-configuration.nix
       ./modules/packages.nix
+      ./modules/vim.nix
     ];
+
+
+  # fileSystems."/boot" options are in modules/hardware-configuration.nix
+
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
+
+  #boot.tmp.useTmpfs = false;
 
   boot.loader = {
         efi = {
@@ -24,7 +31,7 @@
             enable = true;
             efiSupport = true;
             #efiInstallAsRemovable = true;
-            device = "nodev";
+            device = "nodev";		# GRUB needs to have nodev
 	    useOSProber = true;
 	    default = "saved";	# default boot entry -> saved means it will be the last booted entry
             
@@ -121,6 +128,8 @@
   hardware.bluetooth.enable = true;
   # Powers up the default Bluetooth controller on boot
   hardware.bluetooth.powerOnBoot = true;
+  # GUI for bluetooth device management
+  services.blueman.enable = true;
 
   # Enable sound with pipewire.
   #hardware.pulseaudio.enable = false;	# Old option, deprecated
@@ -162,6 +171,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+
+  # Enable docker daemon
+  virtualisation.docker.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with pkgs; [
@@ -195,5 +208,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
 
 }

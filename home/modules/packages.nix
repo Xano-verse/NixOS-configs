@@ -7,8 +7,8 @@
 
 		cava		# Audio Visualizer for Alsa		
 
-		discord
-		discordo	# terminal-based discord 
+#		discord
+#		discordo	# terminal-based discord 
 
 		hyfetch
 
@@ -18,9 +18,12 @@
 
 		librewolf
 
+		obs-studio
 		oh-my-zsh
 
 		pywal		# generate color palettes according to wallpaper
+
+		vscode
 
 		waybar
 

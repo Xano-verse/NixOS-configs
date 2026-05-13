@@ -1,7 +1,8 @@
 {
 	imports = [
-		./zsh/zsh.nix
-		./dwm/dwm.nix
+        ./git.nix
+        ./niri.nix
+		./zsh.nix
 
 	];
 
