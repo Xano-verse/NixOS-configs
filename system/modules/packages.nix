@@ -19,6 +19,7 @@
 		fastfetch
 		#feh		# wallpaper setter (probably only works for X11)
 		fftw		# for waybar's cava module
+        firefox-unwrapped     # chosen over simple firefox due to the screen sharing on wayland + pipewire support (see firefox page on nix wiki and local firefox.nix)
 		flameshot
 		fzf
 

@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./modules/hardware-configuration.nix
       ./modules/packages.nix
-      ./modules/vim.nix
+      ./modules/packages/default.nix
     ];
 
 
@@ -165,8 +165,8 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Install firefox. -> done in modules/packages.nix and configured in modules/packages/firefox.nix
+  #programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -195,6 +195,21 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+
+
+  # Enable xdg desktop integration
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
+
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -208,6 +223,9 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+
+
 
 
 }

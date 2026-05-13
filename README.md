@@ -60,13 +60,14 @@ If nix has features to define our configs through the nix language in a way we l
 
 But we can also use home-manager to pull a config file (from github for example) and specifically put it in place (like move it to ~/.config/ for example)
 
-vim config is done system-wide wht nix language while zsh config is done with with home manager, for example
+vim config is done system-wide with the nix language while zsh config is done with with home manager, for example
 
 
-### Done in Nix System-Wide
+### Configs done in Nix System-Wide
+- firefox
 - vim
 
-### Done with Home-Manager:
+### Configs done with Home-Manager:
 - git (even though installed system-wide)
 - zsh
 
