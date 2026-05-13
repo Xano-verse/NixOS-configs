@@ -64,10 +64,10 @@ vim config is done system-wide wht nix language while zsh config is done with wi
 
 
 ### Done in Nix System-Wide
-vim
+- vim
 
 ### Done with Home-Manager:
-git (even though installed system-wide)
-zsh
+- git (even though installed system-wide)
+- zsh
 
 
